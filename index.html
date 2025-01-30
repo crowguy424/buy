@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List - Mark Complete</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #todo-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .todo-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+        .todo-item.completed span {
+            text-decoration: line-through;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <h1>Things to Buy</h1>
+    <ul id="todo-list">
+        <li class="todo-item">
+            <input type="checkbox">
+            <span>Laptop latest corei9</span>
+        </li>
+        <li class="todo-item">
+            <input type="checkbox">
+            <span>Earbud</span>
+        </li>
+        <li class="todo-item">
+            <input type="checkbox">
+            <span>Cutlery additional</span>
+        </li>
+        <li class="todo-item">
+            <input type="checkbox">
+            <span>Clothes</span>
+        </li>
+    </ul>
+
+    <script src="index.js"></script>
+</body>
+</html>
