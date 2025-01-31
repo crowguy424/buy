@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List - Mark Complete</title>
+    <link rel="icon" href="list.jpg">
+    <title>Things to Buy</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,13 +19,25 @@
             align-items: center;
             padding: 10px;
             border: 1px solid #ccc;
+            transition: all 0.3s ease;
             margin-bottom: 5px;
             border-radius: 5px;
         }
+        .checkbox:checked + label {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.todo-item.completed {
+    background-color: #d1f7d1;
+    border-left: 5px solid #28a745;
+}
         .todo-item.completed span {
             text-decoration: line-through;
-            color: #888;
+            color: #00ee28;
+            background-color: blue;
         }
+
     </style>
 </head>
 <body>
@@ -44,7 +57,7 @@
         </li>
         <li class="todo-item">
             <input type="checkbox">
-            <span>Clothes</span>
+            <span>Clothes and winter jacket heavy included</span>
         </li>
     </ul>
 
