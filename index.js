@@ -20,6 +20,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const todoList = document.getElementById('todo-list');
+
+    todoList.addEventListener('click', function (event) {
+        if (event.target.tagName === 'LI') {
+            event.target.classList.toggle('completed');
+        }
+    });
+});
 
 
 
