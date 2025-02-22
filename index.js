@@ -1,34 +1,30 @@
-const todoItems = document.querySelectorAll('.todo-item');
-document.addEventListener('DOMContentLoaded', function() {
-    const todoList = document.getElementById('todo-list');
-
-    // Add event listeners to all checkboxes
-    const checkboxes = document.querySelectorAll('#todo-list .todo-item input[type="checkbox"]');
-    checkboxes.forEach(checkbox => {
-        
-        checkbox.addEventListener('change', function() {
-            const li = checkbox.closest('.todo-item');
-            if (checkbox.checked) {
-                li.classList.add('completed');
-                item.classList.add('completed');
-                label.textContent = 'JOB COMPLETE!!!';
-            } else {
-                li.classList.remove('completed');
-                item.classList.remove('completed');
-                label.textContent = label.textContent.replace('JOB COMPLETE!!!', '').trim();
-            }
-        });
-    });
-});
 document.addEventListener('DOMContentLoaded', function () {
     const todoList = document.getElementById('todo-list');
 
     todoList.addEventListener('click', function (event) {
-        if (event.target.tagName === 'LI') {
-            event.target.classList.toggle('completed');
+        const listItem = event.target.closest('li');
+        if (listItem) {
+            // Toggle the completed class when clicking anywhere on the list item
+            listItem.classList.toggle('completed');
+
+            // Toggle the checkbox state when clicking anywhere on the list item
+            const checkbox = listItem.querySelector('input[type="checkbox"]');
+            if (checkbox) {
+                checkbox.checked = !checkbox.checked;
+            }
         }
     });
+     function resetTodoList() {
+        const listItems = todoList.querySelectorAll('li');
+        listItems.forEach(item => {
+            const checkbox = item.querySelector('input[type="checkbox"]');
+            if (checkbox) {
+                checkbox.checked = false; // Uncheck the checkbox
+                item.classList.remove('completed'); // Remove completed class
+            }
+        });
+    }
+
+    // Call the reset function on page load
+    resetTodoList();
 });
-
-
-
